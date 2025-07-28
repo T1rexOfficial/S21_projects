@@ -1,0 +1,202 @@
+#include <check.h>
+#include "backend/s21_SmartCalc.h"
+
+#test s21_calc_test1
+    char str[] = "35+9^2*(3+2)";
+    double need_ans = 440, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test2
+    char str[] = "log(1000)+log(10)+log(1)";
+    double need_ans = log10(1000.0)+log10(10.0)+log10(1.0), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test3
+    char str[] = "sin(30)+asin(0.5)+sqrt(34353)+444-(-43)+222";
+    double need_ans = sin(30)+asin(0.5)+sqrt(34353)+444-(-43)+222, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test4
+    char str[] = "sin(0)+sqrt(-1)+asin(-2)+atan(-3)";
+    double ans = 0;
+    s21_bool error = s21_false, need_error = s21_true;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq((int)need_error, (int)error);
+
+#test s21_calc_test5
+    char str[] = "1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1";
+    double ans = 0;
+    s21_bool error = s21_false, need_error = s21_true;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq((int)need_error, (int)error);
+
+#test s21_calc_test6
+    char str[] = "sin(30)+asin(0.5)+sqrt(34353)+444-(-43)+222+(-ln(2))+(log(1234)-(-1))";
+    double need_ans = sin(30)+asin(0.5)+sqrt(34353)+444-(-43)+222+(-log(2))+(log10(1234)-(-1)), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test7
+    char str[] = "sin(x)+asin(x)-x*x-*123-123-1234";
+    double ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(1, (int)error);
+
+#test s21_calc_test8
+    char str[] = "sin(x)+asin(x/100)-x*x-123-123-1234";
+    double need_ans = sin(45)+asin(0.45)-45*45-123-123-1234, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 45);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test9
+    char str[] = "sin(x)+asin(x/100)-x*x-123-123-1234";
+    double need_ans = sin(-45)+asin(-0.45)-(-45)*(-45)-123-123-1234, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, -45);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test10
+    char str[] = "-*";
+    double ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(1, (int)error);
+
+#test s21_calc_test11
+    char str[] = "$#S1111agadsgasdfgsdfgsd!!!";
+    double ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(1, (int)error);
+
+#test s21_calc_test12
+    char str[] = "qqqqqqqoopopopop";
+    double ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(1, (int)error);
+
+#test s21_calc_test13
+    char str[] = "1+(+1)";
+    double need_ans = 2, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test14
+    char str[] = "atan(30)";
+    double need_ans = atan(30), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test15
+    char str[] = "2^3^2";
+    double need_ans = 512, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test16
+    char str[] = ")";
+    double ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(1, (int)error);
+
+#test s21_calc_test17
+    char str[] = "1+2^3^2";
+    double need_ans = 513, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test18
+    char str[] = "1+2^3^2+(-1)";
+    double need_ans = 512, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test19
+    char str[] = "513mod33+33+1";
+    double need_ans = 513%33+33+1, ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test20
+    char str[] = "log(100)+2^3^2+ln(100)";
+    double need_ans = log10(100)+512+log(100), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test21
+    char str[] = "sin(30)^2";
+    double need_ans = sin(30)*sin(30), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test22
+    char str[] = "cos(30)^2";
+    double need_ans = cos(30)*cos(30), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test23
+    char str[] = "atan(2)+22+1+(-33334)";
+    double need_ans = atan(2)+22+1+(-33334), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test24
+    char str[] = "2!";
+    double ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(1, (int)error);
+
+#test s21_calc_test25
+    char str[] = "tan(2)-log(1000)";
+    double need_ans = tan(2)-log10(1000), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
+
+#test s21_calc_test26
+    char str[] = "acos(0.2)-11111-(-3-3-3-3)";
+    double need_ans = acos(0.2)-11111-(-3-3-3-3), ans = 0;
+    s21_bool error = s21_false;
+    calc(str, &ans, &error, 0);
+    ck_assert_int_eq(0, (int)error);
+    ck_assert_double_eq(need_ans, ans);
