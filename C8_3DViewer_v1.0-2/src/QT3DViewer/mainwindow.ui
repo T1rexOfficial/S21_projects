@@ -1,0 +1,1571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1040</width>
+    <height>482</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1040</width>
+    <height>482</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="back">
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(38, 38, 38);</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="100,0">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="MyOpenGLWidget" name="screen" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>640</width>
+          <height>480</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: green; </string>
+        </property>
+        <widget class="QPushButton" name="reset">
+         <property name="geometry">
+          <rect>
+           <x>5</x>
+           <y>5</y>
+           <width>50</width>
+           <height>50</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+QPushButton:pressed {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #ccc;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>RESET</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>386</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTipDuration">
+         <number>-1</number>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="tabPosition">
+         <enum>QTabWidget::North</enum>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Triangular</enum>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="elideMode">
+         <enum>Qt::ElideRight</enum>
+        </property>
+        <property name="usesScrollButtons">
+         <bool>false</bool>
+        </property>
+        <property name="documentMode">
+         <bool>true</bool>
+        </property>
+        <property name="tabsClosable">
+         <bool>false</bool>
+        </property>
+        <property name="movable">
+         <bool>false</bool>
+        </property>
+        <property name="tabBarAutoHide">
+         <bool>false</bool>
+        </property>
+        <widget class="QWidget" name="Creation">
+         <attribute name="title">
+          <string>Creation</string>
+         </attribute>
+         <widget class="QTextBrowser" name="Model">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>351</width>
+            <height>192</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;</string>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>false</bool>
+          </property>
+          <property name="undoRedoEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Model&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QTextBrowser" name="BackColor">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>240</y>
+            <width>351</width>
+            <height>192</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;</string>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>false</bool>
+          </property>
+          <property name="undoRedoEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Background Color&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Uplode">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>171</y>
+            <width>271</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+QPushButton:pressed {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #ccc;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>UPLOAD MODEL</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>false</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>false</bool>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>60</y>
+            <width>271</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="ModelDesc">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QLabel" name="FullName">
+               <property name="text">
+                <string>Full name</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="CEdges">
+               <property name="text">
+                <string>Count of edges</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="CVertices">
+               <property name="text">
+                <string>Count of vertices</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <property name="spacing">
+              <number>-1</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_name_obj">
+               <property name="text">
+                <string>Mom</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_cnt_f">
+               <property name="text">
+                <string>1000</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_cnt_v">
+               <property name="text">
+                <string>10000</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="colorWidget" native="true">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>290</y>
+            <width>211</width>
+            <height>111</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="Scene">
+         <attribute name="title">
+          <string>Scene</string>
+         </attribute>
+         <widget class="QTextBrowser" name="BackColor_2">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>331</y>
+            <width>351</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;</string>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>false</bool>
+          </property>
+          <property name="undoRedoEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Scaling&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QTextBrowser" name="Model_2">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>351</width>
+            <height>281</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;</string>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>false</bool>
+          </property>
+          <property name="undoRedoEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Rotate and Move&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="geometry">
+           <rect>
+            <x>59</x>
+            <y>59</y>
+            <width>91</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>X</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_2">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>59</y>
+            <width>90</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius: 0px with gray;</string>
+          </property>
+          <property name="text">
+           <string>Y</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_3">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>59</y>
+            <width>91</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>Z</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QDial" name="dial_move_x">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>209</y>
+            <width>91</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-100</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
+         <widget class="QDial" name="dial_rotate_x">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>109</y>
+            <width>91</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-360</number>
+          </property>
+          <property name="maximum">
+           <number>360</number>
+          </property>
+         </widget>
+         <widget class="QDial" name="dial_move_y">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>209</y>
+            <width>91</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-100</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
+         <widget class="QDial" name="dial_rotate_y">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>109</y>
+            <width>91</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-360</number>
+          </property>
+          <property name="maximum">
+           <number>360</number>
+          </property>
+         </widget>
+         <widget class="QDial" name="dial_move_z">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>209</y>
+            <width>91</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-100</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
+         <widget class="QDial" name="dial_rotate_z">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>109</y>
+            <width>91</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-360</number>
+          </property>
+          <property name="maximum">
+           <number>360</number>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="line_scale">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>367</y>
+            <width>291</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+border: 1px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="line_rotate_z">
+          <property name="geometry">
+           <rect>
+            <x>251</x>
+            <y>169</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="line_rotate_y">
+          <property name="geometry">
+           <rect>
+            <x>161</x>
+            <y>169</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="line_rotate_x">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>169</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="line_move_x">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>269</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="line_move_y">
+          <property name="geometry">
+           <rect>
+            <x>161</x>
+            <y>269</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="line_move_z">
+          <property name="geometry">
+           <rect>
+            <x>251</x>
+            <y>269</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_5">
+          <property name="geometry">
+           <rect>
+            <x>151</x>
+            <y>60</y>
+            <width>90</width>
+            <height>231</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius: 10px</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QSlider" name="scale_slider">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>396</y>
+            <width>291</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-4</number>
+          </property>
+          <property name="maximum">
+           <number>4</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <zorder>BackColor_2</zorder>
+         <zorder>Model_2</zorder>
+         <zorder>lineEdit</zorder>
+         <zorder>lineEdit_3</zorder>
+         <zorder>dial_move_x</zorder>
+         <zorder>dial_rotate_x</zorder>
+         <zorder>dial_move_z</zorder>
+         <zorder>dial_rotate_z</zorder>
+         <zorder>line_scale</zorder>
+         <zorder>line_rotate_z</zorder>
+         <zorder>line_rotate_x</zorder>
+         <zorder>line_move_x</zorder>
+         <zorder>line_move_z</zorder>
+         <zorder>lineEdit_5</zorder>
+         <zorder>line_move_y</zorder>
+         <zorder>line_rotate_y</zorder>
+         <zorder>dial_move_y</zorder>
+         <zorder>dial_rotate_y</zorder>
+         <zorder>lineEdit_2</zorder>
+         <zorder>scale_slider</zorder>
+        </widget>
+        <widget class="QWidget" name="Object">
+         <attribute name="title">
+          <string>Object</string>
+         </attribute>
+         <widget class="QTextBrowser" name="Model_3">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>351</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;</string>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>false</bool>
+          </property>
+          <property name="undoRedoEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Projection Type&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QTextBrowser" name="BackColor_3">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>181</y>
+            <width>351</width>
+            <height>251</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;</string>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>false</bool>
+          </property>
+          <property name="undoRedoEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Customization&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="parallel_radiobutton">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>60</y>
+            <width>271</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+border: 1px;</string>
+          </property>
+          <property name="text">
+           <string>Parallel projection</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="center_radiobutton">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>100</y>
+            <width>271</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="tabletTracking">
+           <bool>false</bool>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+border: 1px;</string>
+          </property>
+          <property name="text">
+           <string>Central projection</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>false</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>300</number>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBox_LineType">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>308</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox { border: 1px solid rgb(255, 255, 255); border-radius: 10px;}
+QComboBox::down-arrow { border: none; }
+QComboBox::drop-down { width: 0px; }
+</string>
+          </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
+          <property name="maxVisibleItems">
+           <number>17</number>
+          </property>
+          <property name="duplicatesEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>solid</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dotted</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="comboBox_VertexType">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>370</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="mouseTracking">
+           <bool>false</bool>
+          </property>
+          <property name="tabletTracking">
+           <bool>false</bool>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::TabFocus</enum>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::ActionsContextMenu</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox { border: 1px solid rgb(255, 255, 255); border-radius: 10px;}
+QComboBox::down-arrow { border: none;}
+QComboBox::drop-down { width: 0px; }
+</string>
+          </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
+          <property name="duplicatesEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>square</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>round</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>missing</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_21">
+          <property name="geometry">
+           <rect>
+            <x>61</x>
+            <y>369</y>
+            <width>271</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Vertex size</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="vertexLabel">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>370</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_22">
+          <property name="geometry">
+           <rect>
+            <x>61</x>
+            <y>307</y>
+            <width>271</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Line thickness</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineLabel">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>308</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QSlider" name="lineSlider">
+          <property name="geometry">
+           <rect>
+            <x>61</x>
+            <y>328</y>
+            <width>271</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>10</number>
+          </property>
+          <property name="value">
+           <number>1</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <widget class="QSlider" name="vertexSlider">
+          <property name="geometry">
+           <rect>
+            <x>61</x>
+            <y>390</y>
+            <width>271</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>50</number>
+          </property>
+          <property name="value">
+           <number>10</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="lineColorButton">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>220</y>
+            <width>271</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>LINE COLOR</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="vertexColorButton">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>260</y>
+            <width>271</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>VERTEX COLOR</string>
+          </property>
+         </widget>
+         <zorder>Model_3</zorder>
+         <zorder>BackColor_3</zorder>
+         <zorder>parallel_radiobutton</zorder>
+         <zorder>center_radiobutton</zorder>
+         <zorder>lineSlider</zorder>
+         <zorder>label_22</zorder>
+         <zorder>lineLabel</zorder>
+         <zorder>comboBox_LineType</zorder>
+         <zorder>vertexSlider</zorder>
+         <zorder>label_21</zorder>
+         <zorder>comboBox_VertexType</zorder>
+         <zorder>vertexLabel</zorder>
+         <zorder>lineColorButton</zorder>
+         <zorder>vertexColorButton</zorder>
+        </widget>
+        <widget class="QWidget" name="Save">
+         <attribute name="title">
+          <string>Save</string>
+         </attribute>
+         <widget class="QTextBrowser" name="Model_4">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>351</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;</string>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>false</bool>
+          </property>
+          <property name="undoRedoEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Saving&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QTextBrowser" name="BackColor_4">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>220</y>
+            <width>351</width>
+            <height>111</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;</string>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>false</bool>
+          </property>
+          <property name="undoRedoEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Recording GIF&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="save_jpeg">
+          <property name="geometry">
+           <rect>
+            <x>58</x>
+            <y>70</y>
+            <width>91</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton { 
+border: 1px solid rgb(255, 255, 255);
+border-radius: 20px;
+background-color: rgb(255, 255, 255); 
+color: black;
+}</string>
+          </property>
+          <property name="text">
+           <string>jpeg</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="save_bmp">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>70</y>
+            <width>90</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton { 
+border-top: 1px solid white;
+border-bottom: 1px solid white;
+border-left: none;
+border-right: none;
+}</string>
+          </property>
+          <property name="text">
+           <string>bmp</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="save_png">
+          <property name="geometry">
+           <rect>
+            <x>241</x>
+            <y>70</y>
+            <width>91</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton { 
+border-top: 1px solid white;
+border-bottom: 1px solid white;
+border-left: none;
+border-right: 1px solid white;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}</string>
+          </property>
+          <property name="text">
+           <string>png</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_12">
+          <property name="geometry">
+           <rect>
+            <x>58</x>
+            <y>70</y>
+            <width>274</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid rgb(255, 255, 255);
+background-color: transparent;  
+border-radius: 20px;</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="save_image">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>130</y>
+            <width>271</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+QPushButton:pressed {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #ccc;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>SAVE</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>false</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>false</bool>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="recordButton">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>270</y>
+            <width>271</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+QPushButton:pressed {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #ccc;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Record and Save (5s)</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>false</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>false</bool>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QWidget" name="widget_3" native="true">
+          <property name="geometry">
+           <rect>
+            <x>119</x>
+            <y>233</y>
+            <width>16</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: red; border: 1px solid white; border-radius: 8px</string>
+          </property>
+         </widget>
+         <zorder>lineEdit_12</zorder>
+         <zorder>Model_4</zorder>
+         <zorder>BackColor_4</zorder>
+         <zorder>save_png</zorder>
+         <zorder>save_bmp</zorder>
+         <zorder>save_jpeg</zorder>
+         <zorder>save_image</zorder>
+         <zorder>recordButton</zorder>
+         <zorder>widget_3</zorder>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyOpenGLWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">myopenglwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

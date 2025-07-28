@@ -1,0 +1,219 @@
+#include "backend/viewer_back.h"
+
+#test s21_viewer_test_parser
+    vertexes_t my_v = {0};
+    vertexes_t need_v = {0};
+    facets_t my_f = {0};
+    facets_t need_f = {0};
+    const char path[] = "backend/test.txt";
+    
+    read_obj(path, &my_v, &my_f);
+    read_obj(path, &need_v, &need_f);
+
+    need_v.v[0].x = 0; need_v.v[0].y = 1; need_v.v[0].z = 1;
+    need_v.v[1].x = 0.5; need_v.v[1].y = 1; need_v.v[1].z = 3;
+    need_v.v[2].x = 2; need_v.v[2].y = 2; need_v.v[2].z = 3;
+    need_v.v[3].x = 1; need_v.v[3].y = 2; need_v.v[3].z = 3;
+    need_v.v[4].x = -1; need_v.v[4].y = -1.5; need_v.v[4].z = 2;
+    need_v.v[5].x = 5; need_v.v[5].y = 5; need_v.v[5].z = 5;
+    need_v.v[6].x = 6; need_v.v[6].y = 2; need_v.v[6].z = 0;
+    
+    need_f.f[0].first = 1; need_f.f[0].second = 5;
+    need_f.f[1].first = 5; need_f.f[1].second = 3;
+    need_f.f[2].first = 3; need_f.f[2].second = 4;
+    need_f.f[3].first = 4; need_f.f[3].second = 1;
+    
+    need_f.f[4].first = 2; need_f.f[4].second = 5;
+    need_f.f[5].first = 5; need_f.f[5].second = 6;
+    need_f.f[6].first = 6; need_f.f[6].second = 1;
+    need_f.f[7].first = 1; need_f.f[7].second = 2;
+    
+    need_f.f[8].first = 4; need_f.f[8].second = 5;
+    need_f.f[9].first = 5; need_f.f[9].second = 3;
+    need_f.f[10].first = 3; need_f.f[10].second = 2;
+    need_f.f[11].first = 2; need_f.f[11].second = 4;
+
+    need_f.f[12].first = 7; need_f.f[12].second = 6;
+    need_f.f[13].first = 6; need_f.f[13].second = 5;
+    need_f.f[14].first = 5; need_f.f[14].second = 7;
+    
+    for (int i = 0; i < my_v.sz; ++i) {
+        ck_assert_float_eq(need_v.v[i].x, my_v.v[i].x);
+        ck_assert_float_eq(need_v.v[i].y, my_v.v[i].y);
+        ck_assert_float_eq(need_v.v[i].z, my_v.v[i].z);
+    }   
+
+    for (int i = 0; i < my_f.sz; ++i) {
+        ck_assert_int_eq((int)need_f.f[i].first, (int)my_f.f[i].first);
+        ck_assert_int_eq((int)need_f.f[i].second, (int)my_f.f[i].second);
+    } 
+
+    clear_facets(&my_f); clear_facets(&need_f);
+    clear_vertex(&my_v); clear_vertex(&need_v);
+
+#test s21_viewer_test_scale
+    vertexes_t my_v = {0};
+    vertexes_t need_v = {0};
+    init_vertex(&my_v, 5);
+    init_vertex(&need_v, 5);
+    float m = 3;
+
+    my_v.v[0].x = 1; my_v.v[0].y = 1; my_v.v[0].z = 1;
+    my_v.v[1].x = -1; my_v.v[1].y = -1; my_v.v[1].z = 1;
+    my_v.v[2].x = -1; my_v.v[2].y = 1; my_v.v[2].z = -1;
+    my_v.v[3].x = 1; my_v.v[3].y = -1; my_v.v[3].z = -1;
+    my_v.v[4].x = 0; my_v.v[4].y = 0; my_v.v[4].z = 0;
+    
+    my_v.sz = need_v.sz = 5;
+
+    for (int i = 0; i < my_v.sz; ++i) {
+        need_v.v[i].x = my_v.v[i].x * m;
+        need_v.v[i].y = my_v.v[i].y * m;
+        need_v.v[i].z = my_v.v[i].z * m;
+    }
+    scale(&my_v, m);
+
+    for (int i = 0; i < my_v.sz; ++i) {
+        ck_assert_float_eq(need_v.v[i].x, my_v.v[i].x);
+        ck_assert_float_eq(need_v.v[i].y, my_v.v[i].y);
+        ck_assert_float_eq(need_v.v[i].z, my_v.v[i].z);
+    }
+    clear_vertex(&my_v); clear_vertex(&need_v);
+
+#test s21_viewer_test_shift
+    vertexes_t my_v = {0};
+    vertexes_t need_v = {0};
+    init_vertex(&my_v, 5);
+    init_vertex(&need_v, 5);
+    float dx = 0.5, dy = 4, dz = -3;
+
+    my_v.v[0].x = 1; my_v.v[0].y = 1; my_v.v[0].z = 1;
+    my_v.v[1].x = -1; my_v.v[1].y = -1; my_v.v[1].z = 1;
+    my_v.v[2].x = -1; my_v.v[2].y = 1; my_v.v[2].z = -1;
+    my_v.v[3].x = 1; my_v.v[3].y = -1; my_v.v[3].z = -1;
+    my_v.v[4].x = 0; my_v.v[4].y = 0; my_v.v[4].z = 0;
+    
+    my_v.sz = need_v.sz = 5;
+
+    for (int i = 0; i < my_v.sz; ++i) {
+        need_v.v[i].x = my_v.v[i].x + dx;
+        need_v.v[i].y = my_v.v[i].y + dy;
+        need_v.v[i].z = my_v.v[i].z + dz;
+    }
+    
+    shift(&my_v, dx, dy, dz);
+
+    for (int i = 0; i < my_v.sz; ++i) {
+        ck_assert_float_eq(need_v.v[i].x, my_v.v[i].x);
+        ck_assert_float_eq(need_v.v[i].y, my_v.v[i].y);
+        ck_assert_float_eq(need_v.v[i].z, my_v.v[i].z);
+    }
+    clear_vertex(&my_v); clear_vertex(&need_v);
+
+#test s21_viewer_test_rotate_z
+    vertexes_t my_v = {0};
+    vertexes_t need_v = {0};
+    init_vertex(&my_v, 5);
+    init_vertex(&need_v, 5);
+    float custom_eps = 0.001;
+
+    my_v.v[0].x = 1; my_v.v[0].y = 1; my_v.v[0].z = 1;
+    my_v.v[1].x = -1; my_v.v[1].y = -1; my_v.v[1].z = 1;
+    my_v.v[2].x = -1; my_v.v[2].y = 1; my_v.v[2].z = -1;
+    my_v.v[3].x = 1; my_v.v[3].y = -1; my_v.v[3].z = -1;
+    my_v.v[4].x = 0; my_v.v[4].y = 0; my_v.v[4].z = 0;
+    
+    my_v.sz = need_v.sz = 5;
+
+    need_v.v[0].x = -1; need_v.v[0].y = 1; need_v.v[0].z = 1;
+    need_v.v[1].x = 1; need_v.v[1].y = -1; need_v.v[1].z = 1;
+    need_v.v[2].x = -1; need_v.v[2].y = -1; need_v.v[2].z = -1;
+    need_v.v[3].x = 1; need_v.v[3].y = 1; need_v.v[3].z = -1;
+    need_v.v[4].x = 0; need_v.v[4].y = 0; need_v.v[4].z = 0;
+
+    rotate(&my_v, 'z', 90.0 * (M_PI / 180.0));
+    
+    for (int i = 0; i < my_v.sz; ++i) {
+        ck_assert_float_ge(my_v.v[i].x, need_v.v[i].x - custom_eps);
+        ck_assert_float_le(my_v.v[i].x, need_v.v[i].x + custom_eps);
+
+        ck_assert_float_ge(my_v.v[i].y, need_v.v[i].y - custom_eps);
+        ck_assert_float_le(my_v.v[i].y, need_v.v[i].y + custom_eps);
+
+        ck_assert_float_ge(my_v.v[i].z, need_v.v[i].z - custom_eps);
+        ck_assert_float_le(my_v.v[i].z, need_v.v[i].z + custom_eps);
+    }
+    clear_vertex(&my_v); clear_vertex(&need_v);
+
+#test s21_viewer_test_rotate_x
+    vertexes_t my_v = {0};
+    vertexes_t need_v = {0};
+    init_vertex(&my_v, 5);
+    init_vertex(&need_v, 5);
+    float custom_eps = 0.001;
+
+    my_v.v[0].x = 1; my_v.v[0].y = 1; my_v.v[0].z = 1;
+    my_v.v[1].x = -1; my_v.v[1].y = -1; my_v.v[1].z = 1;
+    my_v.v[2].x = -1; my_v.v[2].y = 1; my_v.v[2].z = -1;
+    my_v.v[3].x = 1; my_v.v[3].y = -1; my_v.v[3].z = -1;
+    my_v.v[4].x = 0; my_v.v[4].y = 0; my_v.v[4].z = 0;
+    
+    my_v.sz = need_v.sz = 5;
+
+    need_v.v[0].x = 1; need_v.v[0].y = -1; need_v.v[0].z = 1;
+    need_v.v[1].x = -1; need_v.v[1].y = -1; need_v.v[1].z = -1;
+    need_v.v[2].x = -1; need_v.v[2].y = 1; need_v.v[2].z = 1;
+    need_v.v[3].x = 1; need_v.v[3].y = 1; need_v.v[3].z = -1;
+    need_v.v[4].x = 0; need_v.v[4].y = 0; need_v.v[4].z = 0;
+
+    rotate(&my_v, 'x', 90.0 * (M_PI / 180.0));
+    
+    for (int i = 0; i < my_v.sz; ++i) {
+        ck_assert_float_ge(my_v.v[i].x, need_v.v[i].x - custom_eps);
+        ck_assert_float_le(my_v.v[i].x, need_v.v[i].x + custom_eps);
+
+        ck_assert_float_ge(my_v.v[i].y, need_v.v[i].y - custom_eps);
+        ck_assert_float_le(my_v.v[i].y, need_v.v[i].y + custom_eps);
+
+        ck_assert_float_ge(my_v.v[i].z, need_v.v[i].z - custom_eps);
+        ck_assert_float_le(my_v.v[i].z, need_v.v[i].z + custom_eps);
+    }
+    clear_vertex(&my_v); clear_vertex(&need_v);
+
+#test s21_viewer_test_rotate_y
+    vertexes_t my_v = {0};
+    vertexes_t need_v = {0};
+    init_vertex(&my_v, 5);
+    init_vertex(&need_v, 5);
+    float custom_eps = 0.001;
+
+    my_v.v[0].x = 1; my_v.v[0].y = 1; my_v.v[0].z = 1;
+    my_v.v[1].x = -1; my_v.v[1].y = -1; my_v.v[1].z = 1;
+    my_v.v[2].x = -1; my_v.v[2].y = 1; my_v.v[2].z = -1;
+    my_v.v[3].x = 1; my_v.v[3].y = -1; my_v.v[3].z = -1;
+    my_v.v[4].x = 0; my_v.v[4].y = 0; my_v.v[4].z = 0;
+    
+    my_v.sz = need_v.sz = 5;
+
+    need_v.v[0].x = 1; need_v.v[0].y = 1; need_v.v[0].z = -1;
+    need_v.v[1].x = 1; need_v.v[1].y = -1; need_v.v[1].z = 1;
+    need_v.v[2].x = -1; need_v.v[2].y = 1; need_v.v[2].z = 1;
+    need_v.v[3].x = -1; need_v.v[3].y = -1; need_v.v[3].z = -1;
+    need_v.v[4].x = 0; need_v.v[4].y = 0; need_v.v[4].z = 0;
+
+    rotate(&my_v, 'y', 90.0 * (M_PI / 180.0));
+    
+    for (int i = 0; i < my_v.sz; ++i) {
+        ck_assert_float_ge(my_v.v[i].x, need_v.v[i].x - custom_eps);
+        ck_assert_float_le(my_v.v[i].x, need_v.v[i].x + custom_eps);
+
+        ck_assert_float_ge(my_v.v[i].y, need_v.v[i].y - custom_eps);
+        ck_assert_float_le(my_v.v[i].y, need_v.v[i].y + custom_eps);
+
+        ck_assert_float_ge(my_v.v[i].z, need_v.v[i].z - custom_eps);
+        ck_assert_float_le(my_v.v[i].z, need_v.v[i].z + custom_eps);
+    }
+    clear_vertex(&my_v); clear_vertex(&need_v);
+
+#main-pre
+    srunner_set_fork_status(sr,CK_NOFORK);
